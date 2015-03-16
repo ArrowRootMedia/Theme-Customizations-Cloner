@@ -86,7 +86,7 @@ class Theme_Customizations_Cloner_Admin {
                         if(strlen($_FILES['themeMods']['tmp_name'])>0)
                         {
                             $mods=file_get_contents($_FILES['themeMods']['tmp_name']);
-                            $modArr=json_decode(sanitize_text_field($mods));
+                            $modArr=json_decode(sanitize_text_field($mods), true);
                             if(is_array($modArr))
                                 update_option('theme_mods_'.$import_theme,$modArr);
                             else
